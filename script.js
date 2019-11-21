@@ -1,27 +1,29 @@
+//
+// $('li').click(function() {
+//   if ($('li').hasClass('correct-answer')) {
+//     console.log('right!');
+//   } else {
+//     console.log('wrong!');
+//   }
+// });
 
-$('.quiz-answer').click(function() {
-  if ($('.quiz-answer').hasClass('correct-answer')) {
-    console.log('right!')
-  } else {
-    console.log('wrong!')
-  }
-});
-
+const quizAnswer = document.querySelector('.quiz-answer');
 // quizAnswer.addEventListener("mouseover", function() {
 //   console.log('ajlkefw')
 // })
 
 
-// for (var i = 0; i < 4; i++) {
-//     quizAnswer[i].addEventListener('click', function(event) {
-//         console.log(quizAnswer[i]);
-//         if (quizAnswer.classList.contains("correct")) {
-//           console.log('well DONE!!')
-//         } else {
-//           console.log('fuck oidsdsd')
-//         }
-//     });
-// }
+for (var i = 0; i < 4; i++) {
+  quizAnswer.addEventListener('click', function() {
+    console.log(quizAnswer[i]);
+    if (quizAnswer.classList.contains('correct-answer')) {
+      console.log('well DONE!!');
+      this.style.backgroundColor = 'green';
+    } else {
+      console.log('fuck oidsdsd');
+    }
+  });
+}
 
 
 
@@ -38,7 +40,7 @@ $('.quiz-answer').click(function() {
 //   this.init = function(){
 //     self._bindEvents();
 //   }
-  
+
 //   this.correctAnswers = [
 //     { question: 1, answer: 'a' },
 //     { question: 2, answer: 'b' },
@@ -47,7 +49,7 @@ $('.quiz-answer').click(function() {
 //     { question: 5, answer: 'd' },
 //     { question: 6, answer: 'b' },
 //   ]
-  
+
 //   this._pickAnswer = function($answer, $answers){
 //     $answers.find('.quiz-answer').removeClass('active');
 //     $answer.addClass('active');
@@ -58,17 +60,17 @@ $('.quiz-answer').click(function() {
 //       var $this = $(this),
 //           chosenAnswer = $this.find('.quiz-answer.active').data('quiz-answer'),
 //           correctAnswer;
-      
+
 //       for ( var j = 0; j < self.correctAnswers.length; j++ ) {
 //         var a = self.correctAnswers[j];
 //         if ( a.question == $this.data('quiz-question') ) {
 //           correctAnswer = a.answer;
 //         }
 //       }
-      
+
 //       if ( chosenAnswer == correctAnswer ) {
 //         numberOfCorrectAnswers++;
-        
+
 //         // highlight this as correct answer
 //         $this.find('.quiz-answer.active').addClass('correct');
 //       }
@@ -110,21 +112,18 @@ $('.quiz-answer').click(function() {
 //           $answers = $this.closest('ul[data-quiz-question]');
 //       self._pickAnswer($this, $answers);
 //       if ( self._isComplete() ) {
-        
+
 //         // scroll to answer section
 //         $('html, body').animate({
 //           scrollTop: $('.quiz-result').offset().top
 //         });
-        
+
 //         self._showResult( self._calcResult() );
 //         $('.quiz-answer').off('click');
-        
+
 //       }
 //     });
 //   }
 // }
 // var quiz = new Quiz();
 // quiz.init();
-
-
-
